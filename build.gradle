@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = project.hasProperty('jdbc') ? 'com.collibra.catalog.tabularprofiler.Jdbc' : 'com.collibra.catalog.tabularprofiler.Csv'
+
+def jerseyVer = '2.27'
+def slf4jVer = '1.7.25'
+def sparkVer = '2.2.3'
+def jacksonScalaVer = '2.9.8'
+
+dependencies {
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: jerseyVer
+    // needed to support the PATCH method in jersey client
+    compile group: 'org.glassfish.jersey.connectors', name: 'jersey-apache-connector', version: jerseyVer
+    compile group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: jerseyVer
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: jerseyVer
+
+    // This library is not distributed in this project. It needs either to be downloaded or referenced differently.
+    // Please check README.md for more information.
+    compile files('libs/profiler-api.jar')
+    compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: sparkVer
+    compile group: 'org.apache.spark', name: 'spark-mllib_2.11', version: sparkVer
+    // prevents version clashes for jackson databind
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-scala_2.11', version: jacksonScalaVer
+
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+}
+
+repositories {
+    jcenter()
+}
