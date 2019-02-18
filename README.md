@@ -162,7 +162,7 @@ We expect contributors to follow the code of conduct defined [here](CODE_OF_COND
 
 # License
 
-The examples in this project are released under the following license: [LICENCE](LICENSE)
+The examples in this project are released under the following license: [LICENSE](LICENSE)
 
 # Credits
 
