@@ -35,10 +35,10 @@ ColumnProfilesUpdate profileUpdate = Profilers.profileTable(dataset, ProfileFeat
 After profiling is completed, the result should be transferred to Collibra Catalog
 using the Collibra Catalog profiling REST API. This API enables client applications 
 to send and store profiling data in Catalog assets.  A typical way to do so is 
-to use Collibra Connect as a middleware between Data Governance Center and the Spark 
+to use Collibra Connect as middleware between Data Governance Center and the Spark 
 cluster.
 
-![Profiling jobs in cluster architecture](doc/profiling_jobs_in_cluster_small.png "Example of architecture for running profiling jobs in cluster")
+![Profiling jobs in cluster architecture](doc/profiling_jobs_in_cluster_small.png "Example of architecture for running profiling jobs in a cluster")
 
 The result of the profiling job is a `ColumnProfilesUpdate` object. This object is 
 provided in a format that is close to the one used by the profiling REST API. 
@@ -50,7 +50,7 @@ contains and fill the AssetIdentifier object in each one of them.
 loop over the ColumnProfile objects for you.
 
 Depending on your architecture, it's possible that the information required to fill the 
-AssetIdentifiers is not available in you Spark job. In that case, only the first option 
+AssetIdentifiers is not available in your Spark job. In that case, only the first option 
 can be used and filling the missing information must be done in another node (e.g. in a
 Collibra Connect script).  
 
@@ -63,14 +63,14 @@ there are also some additional parameters that can be tuned to better control th
 behavior. Those parameters can be passed to the profiling jobs by providing a 
 `ProfilingConfiguration` object when calling `Profilers.profileTable`.
 
-Those parameters as as follows:
+Those parameters are as follows:
 * _CacheLevel_: The cache level tells the profiling jobs if and how to cache data when 
                 they identify points where caching can improve performance. The levels 
                 are the same as those defined in org.apache.spark.api.java.StorageLevels.
                 A level set to NONE actually prevents caching.
 * _MaximumValueLength_: Defines how many characters are used by profiling jobs for handling 
                         long text values.
-* _DefaultDatePattern_: Defines the default date pattern used for dates detection.
+* _DefaultDatePattern_: Defines the default date pattern used for date detection.
                         The pattern format in use is described in java.time.format.DateTimeFormatter.
 * _DefaultTimePattern_: Defines the default time pattern used for times detection.
                         The pattern format in use is described in java.time.format.DateTimeFormatter.
@@ -101,7 +101,7 @@ In order to be able to use the Catalog profiling REST API, a simple Java
 REST client is included in the project. This client is by NO means a
 suggested implementation for such functionality. It is added purely for
 illustrative purposes. A more common pattern is to establish communication 
-between the Spark cluster or hadoop environment and 
+between the Spark cluster or Hadoop environment and 
 Collibra Data Governance Center using Collibra Connect. 
 
 ## Identification of column assets
@@ -112,7 +112,7 @@ information.
 
 Please notice the profiling REST API expects the assets to be already present
 and to only update the profiling information. Hence a common pattern is to 
-first create the relevant assets using a simple Catalog ingestion or using  
+first create the relevant assets using simple Catalog ingestion or using  
 a Connect script and then use Connect again to send the profiling information
 to Catalog. This connect script would also be in charge of making the link 
 between a column profile and a Column asset using the `AssetIdentifier` data 
@@ -125,7 +125,7 @@ this project does not contain the library directly. The first step to run the ex
 is therefore to:
 1. Download your own copy of the Collibra Catalog Profiling library at https://marketplace.collibra.com/
 2. Update the project classpath by either
-    * storing the profiler jar file in the libs directory of this project or
+    * storing the profiler jar file in the libs directory of this project, or
     * adapting `build.gradle` dependencies to point to a valid location of that library.
     
 Then, depending on what example you are running, you may also need to change a
@@ -162,7 +162,7 @@ We expect contributors to follow the code of conduct defined [here](CODE_OF_COND
 
 # License
 
-The examples in this project are released under the following license: [LICENCE.txt](LICENSE.txt)
+The examples in this project are released under the following license: [LICENCE](LICENSE)
 
 # Credits
 
