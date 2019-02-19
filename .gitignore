@@ -3,4 +3,5 @@
 .idea
 *iml
 out
-/libs/profiler-api.jar
+/libs/collibra-profiler-*
+

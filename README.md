@@ -146,6 +146,12 @@ gradle: `./gradlew -Pjdbc run`
 
 # Release notes
 
+## Compatibility chart
+
+| Library version             | Collibra DGC version | Apache Spark version |
+|-----------------------------|----------------------|----------------------|
+| collibra-profiler-1.0.0.jar | 5.6.1                | 2.2.3                |
+
 ## v1.0 
 Initial release
 
@@ -162,7 +168,10 @@ We expect contributors to follow the code of conduct defined [here](CODE_OF_COND
 
 # License
 
-The examples in this project are released under the following license: [LICENSE](LICENSE)
+The examples in this project are released under the following license: [LICENSE](LICENSE).
+
+Collibra Catalog profiler library available at [Collibra Marketplace](https://marketplace.collibra.com)
+to Collibra Catalog licence owners under Collibra Marketplace license. 
 
 # Credits
 

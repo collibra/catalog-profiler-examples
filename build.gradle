@@ -22,7 +22,7 @@ dependencies {
 
     // This library is not distributed in this project. It needs either to be downloaded or referenced differently.
     // Please check README.md for more information.
-    compile files('libs/profiler-api.jar')
+    compile files('libs/collibra-profiler-1.0.0.jar')
     compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: sparkVer
     compile group: 'org.apache.spark', name: 'spark-mllib_2.11', version: sparkVer
     // prevents version clashes for jackson databind
