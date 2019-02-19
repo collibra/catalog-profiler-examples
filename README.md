@@ -170,8 +170,8 @@ We expect contributors to follow the code of conduct defined [here](CODE_OF_COND
 
 The examples in this project are released under the following license: [LICENSE](LICENSE).
 
-Collibra Catalog profiler library available at [Collibra Marketplace](https://marketplace.collibra.com)
-to Collibra Catalog licence owners under Collibra Marketplace license. 
+Collibra Catalog profiler library available at [Collibra Marketplace](https://marketplace.collibra.com/listings/collibra-catalog-profiler/)
+to Collibra Catalog licence owners under the same license terms as Collibra Catalog.
 
 # Credits
 
