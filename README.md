@@ -144,22 +144,12 @@ Calling the `run` gradle command will execute the csv example:
 In order to execute the jdbc example, pass the `jdbc` parameter to
 gradle: `./gradlew -Pjdbc run`
 
-# Release notes
-
-## Compatibility chart
+# Compatibility chart
 
 | Library version             | Collibra DGC version | Apache Spark version |
 |-----------------------------|----------------------|----------------------|
 | collibra-profiler-1.0.0.jar | 5.6.1                | 2.2.3                |
 
-## v1.0 
-Initial release
-
-# Known issues
-
-## v1.0
-* Internal repartitioning in quantiles calculation may lead to out of memory errors. 
-  Extra partitioning before calling the profiler may help with this issue. 
 
 # Contributions
 
